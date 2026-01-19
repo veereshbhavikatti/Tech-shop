@@ -1,0 +1,255 @@
+body{
+  padding-top: 50px;
+  width: 100% ;
+}
+.nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.nav-icons {
+  position: relative;
+}
+.navbar {
+  position: relative;
+  z-index: 1000;
+   width: 100% ; 
+}
+
+.icon-label {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  background: linear-gradient(90deg, #000 50%, #111);
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nav-icons:hover .icon-label {
+  opacity: 1;
+  visibility: visible;
+}
+.nav-icons {
+  position: relative;
+}
+
+.nav-icons .icon {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hover-box {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  width: 220px;
+  background: linear-gradient(90deg, #000 50%, #111);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+.profile:hover .hover-box,
+.hover-box:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 6px;
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.login-btn:hover {
+  background-color: #0b5ed7;
+}
+
+/* kkkkk */
+
+/* input on left side */
+.search-input {
+  width: 680px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  right: 220px;
+  background: linear-gradient(90deg, #000 50%, #111);
+  color: white;
+  border: 2px solid white
+}
+
+
+
+
+
+/*////////////////// sliderrrrrrr ////////////////// */
+
+.hero-slide {
+  height: 550px;
+  background: linear-gradient(90deg, #0f0f0f 50%, #111);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+.slider-container{
+  width: 100%;
+  overflow: hidden;
+}
+.hero-content {
+  max-width: 500px;
+  padding-left: 80px;
+}
+
+.hero-content .brand {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.price .final {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.price .original {
+  font-size: 16px;
+  color: #777;
+  text-decoration: line-through;
+}
+
+.cta-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.hero-image img {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  right: 100px;
+}
+
+/* /////Featured-Products ////// */
+.Featured-Products {
+ background: linear-gradient(90deg, #0f0f0f 50%, #111);
+  color: white;
+  height: 300px;
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* //////////slider 2////////// */
+.slider-container {
+  width: 100%;
+  padding: 60px 0;
+  background: linear-gradient(90deg, #0f0f0f 50%, #111);
+}
+
+.slide-card {
+  transition: all 0.4s ease;
+  transform: scale(0.85);
+  opacity: 0.5;
+  height: 400px;
+}
+
+.swiper-slide-active .slide-card {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.swiper-slide-active .slide-card  .product-name{
+  transform: scale(1.2);
+  opacity: 1;
+  font-size: 20px;
+  padding-left: 45px;
+  padding-bottom: 10px;
+}
+.swiper{
+  overflow: visible;
+}
+.product-name {
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  transition: all 0.4s ease;
+}
+
+.slide-card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.swiper-wrapper {
+  transition-timing-function: ease-in-out;
+}
+
+.product-name{
+  color: white;
+}
+.product-price{
+   color: white;
+   font-size: 25px;
+   padding-top: 25px;
+   padding-left: 40px;
+}
+.Product_discount{
+  font-size: 16px;
+  color: #777;
+  text-decoration: line-through;
+  position: absolute;
+  bottom: 45px;
+  left: 120px;
+}

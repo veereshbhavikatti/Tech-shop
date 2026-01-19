@@ -1,0 +1,104 @@
+.servicesData{
+  background: linear-gradient(90deg, #0f0f0f 50%, #111);
+    color: white;
+}
+.titel{
+    padding: 100px 40%;
+   
+}
+.titel h2{
+     width: 500px;
+}
+.services-row {
+  display: flex;     
+  flex-wrap: wrap;        
+  gap: 70px;       
+  padding-left: 25px;  
+  padding-bottom: 100px;  
+}
+.icon-title{
+    width: 400px;
+}
+
+.all-icones {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;         
+}
+
+.icon-logo .icon svg {
+  font-size: 36px;
+  color: #ff6600;
+}
+
+.icon-detalis {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-detalis {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+/* ////////////footer css/////////// */
+
+.main-footer{
+  background: black;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.techshop-detalls p{
+  color: rgb(179, 176, 176);
+}
+.techshop-detalls input{
+  background: black;
+  color: rgb(172, 171, 171);
+  border: 1px solid rgb(176, 175, 175);
+  width: 270px;
+}
+.techshop-detalls button{
+  background-color: rgb(245, 30, 10);
+  color: white;
+  margin: 15px 0px;
+  height: 30px;
+  width: 100px;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+
+.footer-column ul{
+  list-style: none;
+  position: relative;
+  right: 30px;
+  top: 20px;
+}
+.footer-column ul li{
+  color: rgb(133, 130, 130);
+  margin-bottom: 15px;
+}
+.footer{
+  padding: 20px 10px;
+}
+.line{
+  border: 1px solid rgb(147, 144, 144);
+  margin: 1% 0px;
+}
+.icons{
+  color: rgb(144, 141, 141);
+  padding: 15px;
+  font-size: 20px;
+}

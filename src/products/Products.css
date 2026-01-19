@@ -1,0 +1,114 @@
+.product-images-page{
+    background-color: black;
+    color: white;
+    display: flex;
+    height: 100%;
+}
+.thumbnails img{
+    width: 100px;
+    cursor: pointer;
+    display: block;
+    margin: 40px 30px;
+}
+.single-img img{
+    height: 500px;
+    width: 100%;
+    margin: 40px 30px;
+}
+.product-information{
+    margin: 40px ;
+}
+.price{
+    height: 30px;
+    padding-top: 50px;
+}
+.price h3{
+    text-decoration: line-through;
+    font-size: large;
+    padding-left: 20px;
+}
+.price-saved h5{
+    font-size: 15px;
+    color: green;
+}
+.price-saved h6{
+    font-size: 14px;
+    color: rgb(149, 147, 147);
+}
+.price-saved{
+    display: flex;
+    gap: 110px;
+}
+.price-saved button{
+    height: 25px;
+    background-color: green;
+    color: white;
+    align-items: center;
+}
+.offers{
+    padding: 30px 0px;
+}
+.offers .btn2{
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    margin:  10px 5px;
+}
+.add-to-cart{
+    margin-top: 40px;
+    height: 40px;
+    width: 160px;
+    background-color: red;
+    color: white;
+}
+.reviews{
+    padding: 50px 30%;
+    width: 100%;
+    background-color: black;
+}
+.reviews  button{
+    margin-left: 80px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+.reviews  button:hover{
+    background-color: red;
+    color: white;
+}
+.specif h6{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.specif{
+    background-color: black;
+    color: rgb(196, 194, 194);
+    padding-left: 20px;
+}
+.OverView{
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+}
+.OverView{
+     padding-bottom: 5px;
+}
+.review-box{
+    display: flex;
+    background-color: black;
+    color: white;
+
+}
+.user-icon {
+    font-size: 50px;
+    padding: 20px 10px;
+}
+.user-name{
+    padding: 35px 10px;
+}
+.user-date{
+    color: white;
+    font-size: 15px;
+}
