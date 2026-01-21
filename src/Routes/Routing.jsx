@@ -5,6 +5,7 @@ import Products from '../products/Products';
 import Sliders from '../Header/Sliders';
 import Sliders2 from '../Header/Sliders2';
 import Cart from '../Addtocart/Cart';
+import AllProducts from '../Header/Allproducts';
 
 const Routing = () => {
   return (
@@ -19,6 +20,7 @@ const Routing = () => {
           </>
         }
       />
+      <Route path='/allproducts' element={<AllProducts/>}/>
       <Route path="/product/:id" element={<Products />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>

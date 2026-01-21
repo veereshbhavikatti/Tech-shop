@@ -8,6 +8,7 @@ import Navbar from './Header/Navbar'
 // import Sliders2 from './Header/Sliders2'
 import Advantages from './Header/Advantages'
 import Footer from './Header/Footer'
+import ScrollToTop from './Header/ScrollToTop'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop/>
       <Routing />
       <Advantages/>
       <Footer/>

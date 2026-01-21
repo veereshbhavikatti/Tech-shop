@@ -38,7 +38,12 @@ body{
 .nav-icons {
   position: relative;
 }
-
+.icon-btn{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border: none;
+}
 .nav-icons .icon {
   color: white;
   font-size: 22px;
@@ -101,6 +106,61 @@ body{
 /* kkkkk */
 
 /* input on left side */
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 85px;
+  right: 220px;
+  width: 680px;
+  background: #111;
+  border-radius: 6px;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+.search-item {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  border-bottom: 1px solid #222;
+}
+
+.search-item:hover {
+  background: #222;
+}
+
+.no-result {
+  padding: 10px;
+  color: #aaa;
+}
+  
+
+
+
 .search-input {
   width: 680px;
   padding: 6px 10px;
