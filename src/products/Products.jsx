@@ -1,27 +1,42 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { FaUserCircle } from "react-icons/fa";
+
 import productsData from "../Data/productsData";
 import reviewsData from "../Data/reviewsData";
-import { FaUserCircle } from "react-icons/fa";
+import { addToCart } from "../redux/cartSlice";
+
 import "./Products.css";
 
 const Products = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
+
   const product = productsData.find(
-    (item) => item.id === parseInt(id)
+    (item) => item.id === Number(id)
   );
 
   const [mainImage, setMainImage] = useState(
-    product ? product.images[0] : ""
+    product?.images[0]
   );
-
   const [activeTab, setActiveTab] = useState("spec");
+  const [added, setAdded] = useState(false);
 
   if (!product) return <h2>Product not found</h2>;
 
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    setAdded(true);
+
+    setTimeout(() => {
+      setAdded(false);
+    }, 2000);
+  };
+
   return (
     <div>
-      {/* ================= PRODUCT IMAGES & INFO ================= */}
+      {/* ================= PRODUCT IMAGE & INFO ================= */}
       <div className="product-images-page">
         {/* Thumbnails */}
         <div className="thumbnails">
@@ -29,31 +44,33 @@ const Products = () => {
             <img
               key={index}
               src={img}
-              alt={`Thumbnail ${index + 1}`}
+              alt="thumbnail"
+              onClick={() => setMainImage(img)}
               style={{
                 border:
                   mainImage === img
                     ? "2px solid white"
                     : "1px solid gray",
               }}
-              onClick={() => setMainImage(img)}
             />
           ))}
         </div>
 
         {/* Main Image */}
         <div className="single-img">
-          <img src={mainImage} alt="Selected" />
+          <img src={mainImage} alt={product.title} />
         </div>
 
-        {/* Product Info */}
+        {/* Product Information */}
         <div className="product-information">
           <h1>{product.title}</h1>
           <p>{product.info}</p>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <div style={{ color: "red", fontSize: "24px" }}>★★★★★</div>
-            | {product.ratings} ratings
+          <div className="rating">
+            <span style={{ color: "red", fontSize: "24px" }}>
+              ★★★★★
+            </span>
+            <span> | {product.ratings} ratings</span>
           </div>
 
           <div className="line"></div>
@@ -65,30 +82,42 @@ const Products = () => {
 
           <div className="price-saved">
             <h5>
-              You saved ₹{product.originalPrice - product.finalPrice} (
+              You saved ₹
+              {product.originalPrice - product.finalPrice} (
               {Math.round(
                 ((product.originalPrice - product.finalPrice) /
                   product.originalPrice) *
                   100
               )}
               %)
-              <h6>including of all tax</h6>
             </h5>
+            <h6>Including all taxes</h6>
             <button>In Stock</button>
           </div>
 
           <div className="line"></div>
 
           <div className="offers">
-            <h4>Offers and Discount</h4>
-            <button className="btn2">No cost EMI on Credit Card</button>
-            <button className="btn2">Pay Later & Avail Cashback</button>
+            <h4>Offers & Discounts</h4>
+            <button className="btn2">
+              No cost EMI on Credit Card
+            </button>
+            <button className="btn2">
+              Pay Later & Avail Cashback
+            </button>
           </div>
 
           <div className="line"></div>
 
-          <Link><button className="add-to-cart">Add to Cart</button>
-          </Link>
+          {/* Add to Cart */}
+          <button
+            className={`btn ${
+              added ? "btn-success" : "btn-danger"
+            }`}
+            onClick={handleAddToCart}
+          >
+            {added ? "Added" : "Add to Cart"}
+          </button>
         </div>
       </div>
 
@@ -98,7 +127,7 @@ const Products = () => {
           Specification
         </button>
         <button onClick={() => setActiveTab("overview")}>
-          OverView
+          Overview
         </button>
         <button onClick={() => setActiveTab("reviews")}>
           Reviews
@@ -110,12 +139,12 @@ const Products = () => {
       {/* Specification */}
       {activeTab === "spec" && (
         <div className="specif">
-          <h6> <pre>Brand:                               {product.brand}</pre></h6>
-          <h6><pre>Model:                  {product.title}</pre></h6>
-          <h6><pre>Generic Name:                 {product.category}</pre></h6>
-          <h6><pre>HeadPhone Type:                  {product.type}</pre></h6>
-          <h6><pre>Connectivity:                 {product.connectivity}</pre></h6>
-          <h6><pre>MicroPhone:                        Yes</pre></h6>
+          <p><strong>Brand:</strong> {product.brand}</p>
+          <p><strong>Model:</strong> {product.title}</p>
+          <p><strong>Category:</strong> {product.category}</p>
+          <p><strong>Type:</strong> {product.type}</p>
+          <p><strong>Connectivity:</strong> {product.connectivity}</p>
+          <p><strong>Microphone:</strong> Yes</p>
         </div>
       )}
 
@@ -123,22 +152,15 @@ const Products = () => {
       {activeTab === "overview" && (
         <div className="OverView">
           <p>
-            The {product.title} on-ear wireless headphone provides
-            fabulous sound quality
+            The {product.title} delivers premium sound quality
+            with long-lasting comfort.
           </p>
           <ul>
-            <li>Sound tuned to perfection</li>
-            <li>Comfortable to wear</li>
-            <li>Long hours playback time</li>
+            <li>Crystal clear sound</li>
+            <li>Comfortable fit</li>
+            <li>Long battery life</li>
           </ul>
-          <p>
-            Buy the {product.info} which offers you a fabulous
-            music experience with awesome sound quality  which offers you a fabulous
-            music experience with awesome sound quality. which offers you a fabulous
-            music experience with awesome sound quality. which offers you a fabulous
-            music experience with awesome sound quality. which offers you a fabulous
-            music experience with awesome sound quality..
-          </p>
+          <p>{product.info}</p>
         </div>
       )}
 
@@ -147,17 +169,23 @@ const Products = () => {
         <div className="review">
           {reviewsData.map((item, index) => (
             <div key={index} className="review-box">
-              <div className="user-icon"><FaUserCircle /></div>
-              <div className="user-name"><h6>{item.name}</h6>
-               <div style={{ color: "red", fontSize: "24px" }}>★★★★★ |<span className="user-date">{item.date}</span></div>
-              <p>{item.review}</p></div>
-              
+              <div className="user-icon">
+                <FaUserCircle />
+              </div>
+              <div className="user-name">
+                <h6>{item.name}</h6>
+                <div style={{ color: "red" }}>
+                  ★★★★★{" "}
+                  <span className="user-date">
+                    {item.date}
+                  </span>
+                </div>
+                <p>{item.review}</p>
+              </div>
             </div>
-            
           ))}
         </div>
       )}
-      
     </div>
   );
 };
