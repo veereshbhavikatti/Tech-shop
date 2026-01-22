@@ -253,6 +253,29 @@ body{
   padding-top: 150px;
 }
 
+
+
+/* //////////mobil/////// */
+@media (max-width: 700px) and (min-width: 400px){
+  .hero-content h1 {
+    font-size: 20px;
+  }
+  .hero-content{
+    position: absolute;
+    right: 300px;
+  }
+
+  .hero-image img {
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    left: 200px;
+    bottom: 140px;
+  }
+}
+
+
+
 /* //////////slider 2////////// */
 .slider-container {
   width: 100%;
@@ -313,3 +336,34 @@ body{
   bottom: 45px;
   left: 120px;
 }
+
+
+@media (max-width: 580px) {
+  .slide-card h3 {
+    position: relative;
+    right: 50px;
+    font-weight: 100;
+    font-size: medium;
+  }
+
+  .product-price {
+   font-size: 10px;
+   
+  }
+  .Product_discount{
+    visibility: hidden;
+  }
+  .search-input{
+    position: absolute;
+    right: 10px;
+    width: 200px;
+  }
+  .search-results{
+    position: absolute;
+    right: 10px;
+    width: 200px;
+  }
+}
+
+
+

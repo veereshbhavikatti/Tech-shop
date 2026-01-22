@@ -112,3 +112,12 @@
     color: white;
     font-size: 15px;
 }
+@media (max-width: 580px) {
+  .product-images-page{
+    display: block;
+  }
+  .thumbnails{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

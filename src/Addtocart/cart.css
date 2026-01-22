@@ -57,3 +57,22 @@
     position: relative;
     left: 850px ;
 }
+@media (max-width: 780px) {
+  .cart-page{
+    display: block;
+  }
+  .img-information h3{
+    font-size: 10px;
+  }
+  .img img{
+    width: 150px;
+    height: 140px;
+  }
+  .products-cart{
+    width: 450px;
+  }
+  .delete-icon{
+    position: relative;
+    left: 400px;
+  }
+}

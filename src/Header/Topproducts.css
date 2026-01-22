@@ -1,12 +1,12 @@
 .top-product{
     background: linear-gradient(90deg, #0f0f0f 50%, #111);
 }
-.product-header{
+.product-headers{
     padding: 60px 40%;
     width: 100%;
     color: white;
 }
-.product-header h1{
+.product-headers h1{
     font-size: 35px;
 }
 .product-btn{
@@ -84,6 +84,16 @@
 }
 .products{
     padding:90px 1px ;
+}
+@media (max-width: 580px) {
+  .product-btn  {
+    position: relative;
+    right: 100px;
+  }
+  .product-headers h1{
+    font-size: 30px;
+    width: 200px;
+  }
 }
 
 

@@ -43,7 +43,7 @@ function Topproduct() {
 
   return (
     <div className="top-product">
-      <div className="product-header">
+      <div className="product-headers">
         <h1>Top Products</h1>
       </div>
 

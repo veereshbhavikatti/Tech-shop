@@ -102,3 +102,15 @@
   padding: 15px;
   font-size: 20px;
 }
+@media (max-width: 580px) {
+  .slide-card h3 {
+    position: relative;
+    right: 50px;
+    font-weight: 100;
+    font-size: medium;
+  }
+  .footer{
+    display: block;
+    padding-bottom: 20px;
+  }
+}
